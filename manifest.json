@@ -1,7 +1,7 @@
 {
   "id": "bible-lookup",
   "name": "Bible Lookup",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "minAppVersion": "1.14.4",
   "description": "Look up Bible passages from a Traditional Chinese reference and insert them into your note using only the keyboard.",
   "author": "Vic Chen",
