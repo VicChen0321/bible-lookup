@@ -30,12 +30,12 @@ describe("formatPassage", () => {
     expect(formatPassage(peter, "reference")).toBe("**彼前 1:24-25**");
   });
 
-  it("formats a blockquote without the translation name", () => {
-    expect(formatPassage(peter, "blockquote")).toBe(
+  it("formats a callout with numbered verses and no translation name", () => {
+    expect(formatPassage(peter, "callout")).toBe(
       [
-        "> **彼得前書 1:24-25**",
-        ">",
-        "> 因為凡有血氣的，盡都如草，他的美榮都像草上的花。草必枯乾，花必凋謝；惟有主的道是永存的。所傳給你們的福音就是這道。",
+        "> [!bible] 彼得前書 1:24-25",
+        "> 24 因為凡有血氣的，盡都如草，他的美榮都像草上的花。草必枯乾，花必凋謝；",
+        "> 25 惟有主的道是永存的。所傳給你們的福音就是這道。",
       ].join("\n"),
     );
   });
@@ -46,10 +46,10 @@ describe("formatPassage", () => {
     );
   });
 
-  it("keeps every line of a multi-line verse inside the blockquote", () => {
+  it("keeps every line of a multi-line verse inside the callout", () => {
     const poetry: Passage = { ...peter, verses: [{ number: 24, text: "第一行\n\n第二行" }] };
-    expect(formatPassage(poetry, "blockquote").split("\n").slice(2)).toEqual([
-      "> 第一行",
+    expect(formatPassage(poetry, "callout").split("\n").slice(1)).toEqual([
+      "> 24 第一行",
       ">",
       "> 第二行",
     ]);

@@ -4,7 +4,7 @@ import type BibleLookupPlugin from "../main";
 import { INSERT_FORMATS } from "./settings";
 
 const FORMAT_LABELS: Record<InsertFormat, string> = {
-  blockquote: "Blockquote with scripture",
+  callout: "Callout with scripture",
   reference: "Reference only",
   plain: "Plain text",
 };

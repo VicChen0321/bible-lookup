@@ -13,7 +13,7 @@ It does one thing: find a passage and put it in your note.
 
 - Look up a passage from a Traditional Chinese reference, such as `彼前 1:24-25` or `約翰福音 3:16`.
 - Preview the passage with book, chapter, verse range and translation.
-- Insert a blockquote with the scripture, a bold reference only, or plain text.
+- Insert an Obsidian callout with the scripture, a bold reference only, or plain text.
 - Look up a reference you have selected in a note.
 - Works offline.
   The scripture text is bundled with the plugin.
@@ -56,12 +56,12 @@ Ranges that cross chapters, such as `約 3:16-4:2`, are not supported yet.
 
 The default format is set in the plugin settings, and can be changed for each insertion in the lookup window.
 
-**Blockquote** (default)
+**Callout** (default)
 
 ```markdown
-> **彼得前書 1:24-25**
->
-> 因為凡有血氣的，盡都如草，他的美榮都像草上的花。草必枯乾，花必凋謝；惟有主的道是永存的。所傳給你們的福音就是這道。
+> [!bible] 彼得前書 1:24-25
+> 24 因為凡有血氣的，盡都如草，他的美榮都像草上的花。草必枯乾，花必凋謝；
+> 25 惟有主的道是永存的。所傳給你們的福音就是這道。
 ```
 
 **Reference only** inserts just the citation, with no scripture text.
@@ -79,7 +79,7 @@ Use it to mark which passage a sermon is on.
 
 Insertion never deletes text.
 If you have a selection, the passage is inserted after it.
-A blockquote always starts on its own line, and the whole insertion is one undo step.
+A callout always starts on its own line, and the whole insertion is one undo step.
 
 ## Translations
 

@@ -22,7 +22,7 @@ export interface LookupModalOptions {
 }
 
 const FORMAT_LABELS: Record<InsertFormat, string> = {
-  blockquote: "Blockquote",
+  callout: "Callout",
   reference: "Reference only",
   plain: "Plain text",
 };
@@ -151,8 +151,9 @@ export class LookupModal extends Modal {
     const body = this.resultEl.createDiv({ cls: "bible-lookup-passage" });
     for (const verse of verses) {
       const label = verse.endNumber ? `${verse.number}-${verse.endNumber}` : `${verse.number}`;
-      body.createSpan({ cls: "bible-lookup-verse-number", text: label });
-      body.createSpan({ text: verse.text });
+      const row = body.createDiv({ cls: "bible-lookup-verse" });
+      row.createSpan({ cls: "bible-lookup-verse-number", text: label });
+      row.createSpan({ cls: "bible-lookup-verse-text", text: verse.text });
     }
   }
 

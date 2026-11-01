@@ -6,12 +6,12 @@ describe("prepareInsertion", () => {
     expect(prepareInsertion("text", format, "before ")).toBe("text");
   });
 
-  it("starts a blockquote on its own line when the cursor follows text", () => {
-    expect(prepareInsertion("> q", "blockquote", "some text")).toBe("\n> q\n\n");
+  it("starts a callout on its own line when the cursor follows text", () => {
+    expect(prepareInsertion("> q", "callout", "some text")).toBe("\n> q\n\n");
   });
 
   it("does not add a leading newline on an empty or blank line", () => {
-    expect(prepareInsertion("> q", "blockquote", "")).toBe("> q\n\n");
-    expect(prepareInsertion("> q", "blockquote", "   ")).toBe("> q\n\n");
+    expect(prepareInsertion("> q", "callout", "")).toBe("> q\n\n");
+    expect(prepareInsertion("> q", "callout", "   ")).toBe("> q\n\n");
   });
 });

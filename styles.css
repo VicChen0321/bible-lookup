@@ -28,11 +28,25 @@
   font-weight: var(--font-semibold);
 }
 
+.bible-lookup-verse {
+  display: flex;
+  gap: var(--size-4-2);
+  padding: var(--size-2-1) 0;
+}
+
 .bible-lookup-verse-number {
-  margin-right: 0.25em;
+  flex: 0 0 2.5em;
   color: var(--text-muted);
   font-size: var(--font-smaller);
-  vertical-align: super;
+  font-variant-numeric: tabular-nums;
+  text-align: right;
+  line-height: var(--line-height-normal);
+  padding-top: 0.15em;
+}
+
+.bible-lookup-verse-text {
+  flex: 1 1 auto;
+  white-space: pre-line;
 }
 
 .bible-lookup-message {

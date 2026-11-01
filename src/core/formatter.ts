@@ -1,7 +1,7 @@
 import { getBookName, type BookNameStyle } from "./book-registry";
 import type { BibleReference, Language, Passage } from "./types";
 
-export type InsertFormat = "reference" | "blockquote" | "plain";
+export type InsertFormat = "reference" | "callout" | "plain";
 
 /** Renders "約翰福音 3", "約翰福音 3:16" or "約翰福音 3:16-18" with the book named in `language`. */
 export function formatReference(
@@ -39,11 +39,11 @@ export function formatPassage(passage: Passage, format: InsertFormat): string {
       return `**${formatReference(passage.reference, passage.translation.language, "short")}**`;
     case "plain":
       return joinVerses(passage);
-    case "blockquote": {
-      const body = joinVerses(passage)
-        .split("\n")
+    case "callout": {
+      const body = passage.verses
+        .flatMap((verse) => `${verse.number} ${verse.text.trim()}`.split("\n"))
         .map((line) => (line ? `> ${line}` : ">"));
-      return [`> **${heading(passage)}**`, ">", ...body].join("\n");
+      return [`> [!bible] ${heading(passage)}`, ...body].join("\n");
     }
   }
 }

@@ -5,11 +5,11 @@ export interface BibleSettings {
   insertFormat: InsertFormat;
 }
 
-export const INSERT_FORMATS: readonly InsertFormat[] = ["blockquote", "reference", "plain"];
+export const INSERT_FORMATS: readonly InsertFormat[] = ["callout", "reference", "plain"];
 
 export const DEFAULT_SETTINGS: BibleSettings = {
   translationId: "cuv",
-  insertFormat: "blockquote",
+  insertFormat: "callout",
 };
 
 /** Merges persisted data over the defaults, ignoring anything malformed. */
